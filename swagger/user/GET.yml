@@ -1,0 +1,24 @@
+Return an user key information based on his id or username or email
+---
+tags:
+  - user
+parameters:
+  - name: key
+    in: path
+    type: string
+    description: enter id or username or email
+responses:
+  200:
+    description: The user's information were successfully retrieved
+    schema:
+      example:
+        user:
+          email: tset@mail.com
+          name: Andy
+          is_admin: true
+          is_superadmin : false
+  404:
+    description: Not found error
+  default:
+    description: some thing went wrong
+          

@@ -1,0 +1,26 @@
+Return  all the candidates
+---
+tags:
+  - candidate
+responses:
+  200:
+    description: The user detials successfully retervied 
+    schema:
+      example:
+        list_candidate:
+          candidate 1:
+            email: tset@mail.com
+            name: Andy
+            phone: +0123456789
+            stream: IT/CSE
+            skill_set: c Java Python
+          candidate 2:
+            email: tset@mail.com
+            name: Andy
+            phone: +0123456789
+            stream: IT/CSE
+            skill_set: c Java Python
+  404:
+    description: Not found error
+  default:
+    description: some thing went wrong

@@ -1,0 +1,39 @@
+Create a token
+---
+tags:
+  - token
+consumes:
+  - application/json
+parameters:
+  - in: body
+    name: token
+    description: generate token
+    schema:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+            email:
+              type: string
+              description: email of the user
+              example: andy@testmail.com
+            password:
+              type: string
+              description: password of the user
+              example: password
+responses:
+  '201':
+    description: successfully created token
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          description: status of the operation
+          example: sample token
+  '404':
+    description: url not found
+  default:
+    description: something went wrong
+

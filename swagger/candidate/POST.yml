@@ -1,0 +1,54 @@
+Create a candidate
+---
+tags:
+  - candidate
+consumes:
+  - application/json
+parameters:
+  - in: body
+    name: user
+    description: add user
+    schema:
+      type: object
+      required:
+        - name
+        - email
+        - phone
+        - stream
+        - skill_set
+      properties:
+            name:
+              type: string
+              description:  name of the user
+              example: Andy
+            email:
+              type: string
+              description: email of the user
+              example: andy@testmail.com
+            phone:
+              type: integer
+              description: Phone number
+              example: 1234567891
+            stream:
+              type: string
+              description: stream
+              example: It/CSE
+            skill_set:
+              type: string
+              description: skill set
+              example:  c Java Python
+responses:
+  '201':
+    description: successfully created
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          description: status of the operation
+          example: sucessful
+  '404':
+    description: url not found
+  default:
+    description: someting went wrong
+

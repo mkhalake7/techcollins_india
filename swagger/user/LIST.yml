@@ -1,0 +1,24 @@
+Return  all the user 
+---
+tags:
+  - user
+responses:
+  200:
+    description: The user detials successfully retervied 
+    schema:
+      example:
+        list_user:
+          user 1:
+            email: tset@mail.com
+            name: Andy
+            is_admin: true
+            is_active : false
+          user 2:
+            email: tset1@mail.com
+            name: Sndy
+            is_admin: false
+            is_acive : true
+  404:
+    description: Not found error
+  default:
+    description: some thing went wrong

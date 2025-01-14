@@ -1,0 +1,54 @@
+Update a user
+---
+tags:
+  - user
+consumes:
+  - application/json
+parameters:
+  - in: body
+    name: user
+    description: update a  user
+    schema:
+      type: object
+      required:
+        - id
+      properties:
+            id:
+              type: integer
+              description: id of the user
+              example: 1
+            name:
+              type: string
+              description:  name of the user
+              example: Andy
+            email:
+              type: string
+              description: email of the user
+              example: andy@testmail.com
+            password:
+              type: string
+              description: email of the user
+              example: andy@testmail.com
+            is_admin:
+              type: boolean
+              description: admin or not
+              example: True
+            is_active:
+              type: boolean
+              description: superuser or not
+              example: False
+responses:
+  '201':
+    description: successfully created
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          description: status of the operation
+          example: sucessful
+  '404':
+    description: url not found
+  default:
+    description: someting went wrong
+

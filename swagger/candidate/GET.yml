@@ -1,0 +1,26 @@
+Return an Candidate key information based on his id or email
+---
+tags:
+  - candidate
+parameters:
+  - name: key
+    in: path
+    type: string
+    description: enter id or username or email
+responses:
+  200:
+    description: The user's information were successfully retrieved
+    schema:
+      example:
+        candidate:
+          email: tset@mail.com
+          name: Andy
+          phone: +0123456789
+          stream: IT/CSE
+          skill_set: c Java Python
+
+  404:
+    description: Candidate Not found error
+  default:
+    description: some thing went wrong
+          
