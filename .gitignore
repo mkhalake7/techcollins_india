@@ -39,6 +39,7 @@ pip-delete-this-directory.txt
 htmlcov/
 .tox/
 FE/techcollins/.parcel-cache/
+FE/techcollins/dist/
 .nox/
 .coverage
 .coverage.*
