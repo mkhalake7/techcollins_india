@@ -1,0 +1,56 @@
+Create an event
+---
+tags:
+  - event
+consumes:
+  - application/json
+parameters:
+  - in: body
+    name: event
+    description: Add a new event
+    schema:
+      type: object
+      required:
+        - name
+        - date
+        - start_time
+        - end_time
+        - venue
+      properties:
+        name:
+          type: string
+          description: Name of the event
+          example: Tech Conference 2025
+        date:
+          type: string
+          format: date
+          description: Date of the event
+          example: 2025-05-12
+        start_time:
+          type: string
+          format: time
+          description: Start time of the event
+          example: 09:00:00
+        end_time:
+          type: string
+          format: time
+          description: End time of the event
+          example: 17:00:00
+        venue:
+          type: string
+          description: Venue of the event
+          example: Conference Hall A, Tech Center
+responses:
+  '201':
+    description: Successfully created
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          description: Status of the operation
+          example: successful
+  '404':
+    description: URL not found
+  default:
+    description: Something went wrong

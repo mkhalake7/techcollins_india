@@ -1,0 +1,23 @@
+Return an event's key information based on its id or name
+---
+tags:
+  - event
+parameters:
+  - name: key
+    in: path
+    type: string
+    description: Enter id or name of the event
+responses:
+  200:
+    description: The event's information was successfully retrieved
+    schema:
+      example:
+        event:
+          name: Tech Conference 2025
+          date: 2025-05-12
+          start_time: 09:00:00
+          end_time: 17:00:00
+          venue: Conference Hall A, Tech Center
+  404:
+    description: Not found error
+  default:
