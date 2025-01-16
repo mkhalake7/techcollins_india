@@ -4,3 +4,4 @@ db = SQLAlchemy()
 
 from .user import *
 from .candidate import *
+from .event import *

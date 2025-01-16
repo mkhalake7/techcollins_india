@@ -4,7 +4,7 @@ tags:
   - user
 responses:
   200:
-    description: The user detials successfully retervied 
+    description: The user details successfully retrieved
     schema:
       example:
         list_user:

@@ -1,6 +1,5 @@
 from flasgger import Swagger
 from flask import Flask, send_from_directory
-from flask import request
 from flask.blueprints import Blueprint
 import config
 import routes
@@ -9,16 +8,9 @@ from flask_migrate import Migrate
 import flask_excel
 from flask_cors import CORS, cross_origin
 from flask_bcrypt import Bcrypt
-from flask_jwt_extended import create_access_token
-from flask_jwt_extended import get_jwt_identity
-from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
 
-
-
-
-
-app = Flask(__name__, static_url_path='', static_folder='FE/dist')
+app = Flask(__name__, static_url_path='', static_folder='FE/techcollins/dist')
 app.config['FLASK_ADMIN_SWATCH'] = 'cerulean'
 bcrypt = Bcrypt(app)
 app.config['FLASK_ADMIN_SWATCH'] = 'cerulean'
@@ -41,7 +33,6 @@ app.config["SWAGGER"] = {
     "static_url_path": "/apidocs",
 }
 
-
 Swagger(app)
 app.debug = config.DEBUG
 app.config['SECRET_KEY'] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
@@ -60,18 +51,15 @@ for blueprint in vars(routes).values():
     if isinstance(blueprint, Blueprint):
         app.register_blueprint(blueprint, url_prefix=config.APPLICATION_ROOT)
 
-import admin
 
-
-
-
-@app.route("/", defaults={'path':''})
+@app.route("/", defaults={'path': ''})
 def serve(path):
-    return send_from_directory(app.static_folder,'index.html')
+    return send_from_directory(app.static_folder, 'index.html')
 
-@app.errorhandler(404)   
+
+@app.errorhandler(404)
 def not_found(e):
-    return send_from_directory(app.static_folder,'index.html')
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 if __name__ == "__main__":

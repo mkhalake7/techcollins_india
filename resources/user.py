@@ -53,7 +53,7 @@ class UserResource(Resource):
     @staticmethod
     @swag_from('../swagger/user/PUT.yml')
     def put():
-        data  =  request.get_json()
+        data = request.get_json()
         res = UserRepository.put(data)
         if res:
             return make_response(jsonify({"status":"success"}),201)
