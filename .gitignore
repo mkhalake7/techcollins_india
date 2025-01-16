@@ -38,8 +38,7 @@ pip-delete-this-directory.txt
 # Unit test / coverage reports
 htmlcov/
 .tox/
-FE/techcollins/.parcel-cache/
-FE/techcollins/dist/
+.parcel-cache/
 .nox/
 .coverage
 .coverage.*
